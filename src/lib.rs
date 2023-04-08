@@ -1,5 +1,5 @@
 // Copyright 2019-2020 Parity Technologies (UK) Ltd.
-// 
+//
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
@@ -53,7 +53,7 @@ pub fn seed_from_entropy(entropy: &[u8], password: &str) -> Result<[u8; 64], Err
 
     let mut seed = [0u8; 64];
 
-    pbkdf2::<Hmac<Sha512>>(entropy, salt.as_bytes(), 2048, &mut seed);
+    pbkdf2::<Hmac<Sha512>>(entropy, salt.as_bytes(), 2048, &mut seed).unwrap();
 
     salt.zeroize();
 
