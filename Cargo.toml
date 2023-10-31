@@ -1,6 +1,6 @@
 [package]
 name = "substrate-bip39"
-version = "0.4.4"
+version = "0.4.5"
 authors = ["Parity Technologies <admin@parity.io>"]
 license = "Apache-2.0"
 edition = "2021"
@@ -10,11 +10,14 @@ repository = "https://github.com/paritytech/substrate-bip39"
 
 [dependencies]
 pbkdf2 = { version = "0.12", default-features = false }
-sha2 = "0.10"
-hmac = "0.12"
+sha2 = { version = "0.10", default-features = false }
+hmac = { version = "0.12", default-features = false }
 schnorrkel = { version = "0.11", default-features = false }
 zeroize = { version = "1", default-features = false }
 
 [dev-dependencies]
 tiny-bip39 = "0.8"
 rustc-hex = "2"
+
+[features]
+std = ["pbkdf2/std", "sha2/std", "hmac/std", "schnorrkel/std", "zeroize/std"]
