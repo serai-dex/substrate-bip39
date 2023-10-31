@@ -16,7 +16,7 @@ schnorrkel = { version = "0.11", default-features = false }
 zeroize = { version = "1", default-features = false }
 
 [dev-dependencies]
-tiny-bip39 = "0.8"
+tiny-bip39 = "1"
 rustc-hex = "2"
 
 [features]
